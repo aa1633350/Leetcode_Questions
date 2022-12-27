@@ -22,5 +22,8 @@ public class demo {
         List<String> list = Arrays.asList("Apple", "Orange", "Banana");
         String x = "apPle";
         System.out.println(list.stream().anyMatch(x::equalsIgnoreCase));
+
+        List<Character> ans = new LinkedList<>();
+
     }
 }

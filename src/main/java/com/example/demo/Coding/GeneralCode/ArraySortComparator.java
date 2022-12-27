@@ -1,12 +1,14 @@
 package com.example.demo.Coding.GeneralCode;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class ArraySortComparator {
 
     private void sortOnUnitsDigit() {
         Integer [] arr = {30,20,31,47,14,53,67,89,79,69};
+        StringBuilder sb = new StringBuilder();
 
         Arrays.sort(arr, (a, b) -> {
             // return 1 means swap values

@@ -2,6 +2,7 @@ package com.example.demo.Coding.Recursion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class AllPermutationOfArrayOfInts {
 
@@ -32,7 +33,6 @@ public class AllPermutationOfArrayOfInts {
 
     }
     public List<List<Integer>> permute(int... nums) {
-
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
         int n = nums.length;
@@ -44,7 +44,7 @@ public class AllPermutationOfArrayOfInts {
 
     public static void main(String[] args) {
         AllPermutationOfArrayOfInts arrayOfInts = new AllPermutationOfArrayOfInts();
-        int [] nums = {1,2,1};
+        int [] nums = {1,2,3,4};
         List<List<Integer>> ans = arrayOfInts.permute(nums);
         for(List<Integer> l : ans){
             System.out.println(l);
