@@ -33,4 +33,13 @@ public class AllPathsFromSrcToDes {
 
         }
 
+    public static void main(String[] args) {
+        int i = 150;
+        Integer a = i;
+        Integer b = i;
+        System.out.println(a.equals(b));
+        String word = "USA";
+
+    }
+
 }
