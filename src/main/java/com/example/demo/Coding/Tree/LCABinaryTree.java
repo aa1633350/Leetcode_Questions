@@ -8,7 +8,7 @@ public class LCABinaryTree {
     // Returns true if there is a path from root
     // to the given node. It also populates
     // 'arr' with the given path
-    static void hasPath(Node p, ArrayList<Integer> path, int x)
+    static void hasPath(Node2 p, ArrayList<Integer> path, int x)
     {
         if(p!=null){
             path.add(p.data);
@@ -24,7 +24,7 @@ public class LCABinaryTree {
 
     // function to print the path from root to the
     // given node if the node lies in the binary tree
-    public static void printPath(Node root, int x)
+    public static void printPath(Node2 root, int x)
     {
         // ArrayList to store the path
         ArrayList<Integer> arr=new ArrayList<>();
@@ -37,13 +37,13 @@ public class LCABinaryTree {
     }
 
     public static void main(String args[]) {
-        Node root=new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.right.left = new Node(6);
-        root.right.right = new Node(7);
+        Node2 root=new Node2(1);
+        root.left = new Node2(2);
+        root.right = new Node2(3);
+        root.left.left = new Node2(4);
+        root.left.right = new Node2(5);
+        root.right.left = new Node2(6);
+        root.right.right = new Node2(7);
         int x=5;
         printPath(root, x);
     }
@@ -53,7 +53,7 @@ public class LCABinaryTree {
 class Node
 {
     int data;
-    Node left, right;
+    Node2 left, right;
     Node(int data)
     {
         this.data=data;

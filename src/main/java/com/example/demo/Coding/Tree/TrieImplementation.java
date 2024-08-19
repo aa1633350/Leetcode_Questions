@@ -6,8 +6,8 @@ class TrieNode {
     boolean isEndOfWord;
 
     public TrieNode() {
-        children = new TrieNode[26];
-        isEndOfWord = false;
+        this.children = new TrieNode[26];
+        this.isEndOfWord = false;
     }
 }
 

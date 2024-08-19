@@ -1,5 +1,9 @@
 package com.example.demo.Coding.Graphs;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class LexoSmallestString {
 
     private static void union(char [] parent, char ch1, char ch2) {
@@ -80,5 +84,10 @@ public class LexoSmallestString {
         String s2 = "leetcode";
         String base = "sourcecode";
         System.out.println(smallestEquivalentString(s1,s2,base));
+
+        List<List<Integer>> ans = new LinkedList<>();
+        ans.add(1,new LinkedList<>());
+        //ans.add(1, Arrays.asList(new int[]{1, 1}));
+        int [][] val  =  ans.stream().map(u  -> u.stream().mapToInt(i->i).toArray()).toArray(int[][]::new);
     }
 }

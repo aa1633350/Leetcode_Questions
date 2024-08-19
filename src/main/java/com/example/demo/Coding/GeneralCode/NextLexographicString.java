@@ -49,6 +49,6 @@ public class NextLexographicString {
     }
 
     public static void main(String[] args) {
-        System.out.println(biggerIsGreater("lmno"));
+        System.out.println(biggerIsGreater("chatgpt"));
     }
 }

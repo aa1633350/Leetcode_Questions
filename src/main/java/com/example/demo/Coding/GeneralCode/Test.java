@@ -17,6 +17,38 @@ import java.util.regex.Pattern;
 
 public class Test {
 
+    public static void recur(int [] arr, int len, int index, List<List<Integer>> ans, List<Integer> temp, int target, int sum) {
+        if(target == sum) {
+            //System.out.println("comi");
+
+            ans.add(new ArrayList<>(temp));
+            return;
+        }
+        if(index >=len) {
+
+            return;
+        }
+
+        int currEle = arr[index];
+        if(sum<target) {
+            sum = sum + currEle;
+            temp.add(currEle);
+            recur(arr, len, index, ans, temp, target, sum);
+            temp.remove(temp.size() - 1);
+        }
+        sum = sum - currEle;
+        recur(arr,len,index+1,ans,temp,target,sum);
+
+    }
+    public static List<List<Integer>> findSubsetsThatSumToK(int [] arr, int n, int k)
+    {
+        List<List<Integer>> ans = new ArrayList<>();
+        ArrayList<Integer> temp = new ArrayList<>();
+        recur(arr,n,0,ans,temp,k,0);
+        return ans;
+
+    }
+
 
     static String swap(String str){
         StringBuilder sb = new StringBuilder(str);
@@ -96,8 +128,16 @@ public class Test {
         return allPossiblePermutations(String.valueOf(n), 0, String.valueOf(n).length()-1, false);
     }
     public static void main(String[] args) throws IOException {
+        int [] temp = {2,3,6,7};
+//        temp.add(2);
+//        temp.add(7);
+//        temp.add(0);
+        List<List<Integer>> ans = findSubsetsThatSumToK(temp,temp.length,7);
+        for(List<Integer> arr : ans) {
+            System.out.println(arr);
+        }
         //boolean [] used = new boolean [10];
-        System.out.println(reorderedPowerOf2(55366));
+        //System.out.println(reorderedPowerOf2(55366));
 //        Stack <Integer> st = new Stack<>();
 //        Map<Integer,List<Integer>> map = new HashMap<>();
 //        for(Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {

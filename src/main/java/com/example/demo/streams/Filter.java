@@ -7,21 +7,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Filter {
-    private static boolean checkEven (int num) {
-        return num%2==0;
-    }
-    public static void main(String[] args) {
-        /*Predicate<Integer> checkEven = new Predicate<Integer>() {
-            @Override
-            public boolean test(Integer integer) {
-                return (integer % 2 == 0);
-            }
-        };
-        List <Integer> nums = Arrays.asList(1,2,2,4);
-        nums.stream().filter(checkEven).map(n -> n*2).forEach(System.out::println);*/
+
+    public static void main(String[] args, Object payload) {
+
 
         List <String> names = Arrays.asList("Aditya","Saurabh", "Santosh", "Poonam", "sxjjjjjjj");
         List <String> result = names.stream().filter(x-> x.contains("s") && x.length() > 5 && x.startsWith("a"))
@@ -54,6 +46,12 @@ public class Filter {
         System.out.println("List of unique squared numbers : ");
         List<Integer> nums = Arrays.asList(3,2,1,4,4,6,23,1,1);
         List<Integer> squaredNums = nums.stream().distinct().map(x->x*2).collect(Collectors.toList());
+
         System.out.println(squaredNums);
+
+
+        System.out.println("=================================================");
+
+
     }
 }

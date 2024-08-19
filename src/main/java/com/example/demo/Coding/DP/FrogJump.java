@@ -1,6 +1,7 @@
 package com.example.demo.Coding.DP;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class FrogJump {
@@ -60,7 +61,97 @@ public class FrogJump {
     public static void main(String[] args) {
 
         //int [] num = {0,1,3,5,6,8,12,17};
-        int [] num = {0,2147483647};
-        System.out.println(canCross(num));
+        int [] num = {0,1,2,5,6,9,10,12,13,14,17,19,20,21,26,27,28,29,30};
+        System.out.println(canJump(num));
     }
+
+    public static boolean canJump(int[] stones) {
+        if(stones[1] != 1) {
+            return false;
+        }
+        int n = stones.length;
+        Map<Integer, HashSet<Integer>> stonesPos = new HashMap<>();
+        for(int s : stones) {
+            stonesPos.put(s, new HashSet<>());
+        }
+        stonesPos.get(stones[0]).add(0);
+        for(int stone : stones) {
+            System.out.print("Stone "+ stone + " Jump -> ");
+            HashSet<Integer> possibleJumps = stonesPos.get(stone);
+
+            for(int jump : possibleJumps) {
+                System.out.print(jump + ", ");
+                for(int i=-1;i<=1;i++) {
+                    int nextJump = jump+i;
+
+                    if(nextJump > 0) {
+                        int nextStone = stone + nextJump;
+                        if(stonesPos.containsKey(nextStone)) {
+                            stonesPos.get(nextStone).add(nextJump);
+                        }
+                    }
+                }
+            }
+            System.out.println();
+        }
+
+        return !stonesPos.get(stones[n-1]).isEmpty();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Contact
+    // First -> Aditya
+    // Last -> Anand
+    // no -> 998765432
+    // email ->
+
+
+    // AdityaAnand998765432
+    // RahulKant123456789
+
+    // An
+    //
+
+    // Brute Force takes long time and space
+
+    // Trie -> an
+
+    // List<Contacts> list
+
+    // Aditya -> "an"
+    // Anand -> "an"
+    // 998765432 -> "an"
+    //
+
+
+
+
+
 }

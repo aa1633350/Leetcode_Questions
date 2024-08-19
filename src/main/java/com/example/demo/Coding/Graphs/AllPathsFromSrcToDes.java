@@ -1,9 +1,6 @@
 package com.example.demo.Coding.Graphs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AllPathsFromSrcToDes {
 
@@ -37,9 +34,20 @@ public class AllPathsFromSrcToDes {
         int i = 150;
         Integer a = i;
         Integer b = i;
-        System.out.println(a.equals(b));
-
-        String word = "USA";
+        //System.out.println(a.equals(b));
+//        String x = "vishal";
+//        System.out.println((int)x.charAt(0));
+//        String[] myArray = {"JavaFX", "HBase", "OpenCV", "Aava", "Hadoop","Neo4j"};
+//        Arrays.sort(myArray);
+//        for(String s : myArray) {
+//            System.out.println(s);
+//        }
+        String x = "bcdaiz";
+        System.out.println(x);
+        char [] ch = x.toCharArray();
+        Arrays.sort(ch);
+        String sorted = new String(ch);
+        System.out.println(sorted);
 
     }
 

@@ -1,5 +1,7 @@
 package com.example.demo.DesignPatterns.Strategy;
 
+import com.example.demo.DesignPatterns.Strategy.StrategyImpl.RetryStrategy;
+
 public class Retry {
     RetryStrategy retryStrategy;
     RetryType retryType;

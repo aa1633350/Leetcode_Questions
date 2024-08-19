@@ -1,4 +1,6 @@
-package com.example.demo.DesignPatterns.Strategy;
+package com.example.demo.DesignPatterns.Strategy.StrategyImpl;
+
+import com.example.demo.DesignPatterns.Strategy.RetryType;
 
 public class ExponentialStrategyImpl implements RetryStrategy {
     @Override

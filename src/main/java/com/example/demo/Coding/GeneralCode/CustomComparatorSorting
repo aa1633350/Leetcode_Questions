@@ -1,0 +1,24 @@
+In Java, a custom comparator is implemented using the Comparator interface, which allows you to define custom comparison logic for sorting elements. The Comparator interface has a single method called compare(), which compares two elements and returns an integer indicating their relative order.
+
+In the given code snippet, we have an array pair that contains pairs of values from nums1 and nums2. We want to sort this array based on some specific criteria. To specify the comparison logic, we can provide a lambda expression as the argument to Arrays.sort().
+
+Let's explore some examples of how to sort the pair array based on different columns:
+
+---------------- Sorting based on Column 0 (nums2):
+
+Arrays.sort(pair, (a, b) -> Integer.compare(a[0], b[0]));
+In this case, the lambda expression (a, b) -> Integer.compare(a[0], b[0]) compares the values in the first column (column 0) of each pair. It uses Integer.compare() to compare the values numerically and determine their relative order. The array will be sorted in ascending order based on the values in the first column.
+
+----------------- Sorting based on Column 1 (nums1):
+
+Arrays.sort(pair, (a, b) -> Integer.compare(a[1], b[1]));
+Here, the lambda expression (a, b) -> Integer.compare(a[1], b[1]) compares the values in the second column (column 1) of each pair. It compares the values numerically and sorts the array in ascending order based on the values in the second column.
+
+----------------- Sorting based on Column 0 (nums2) in descending order:
+
+Arrays.sort(pair, (a, b) -> Integer.compare(b[0], a[0]));
+To sort in descending order, we reverse the order of a[0] and b[0] in the lambda expression. This will sort the array in descending order based on the values in the first column.
+
+You can modify the lambda expression according to your specific sorting requirements, considering the columns you want to compare and the desired order (ascending or descending).
+
+Note: When the lambda expression (a, b) -> Integer.compare(a[0], b[0]) returns a positive value, it means a is greater than b, and their positions will be swapped during the sorting process. Similarly, when it returns a negative value, a is considered smaller than b, and no swapping occurs. If the return value is zero, the elements are considered equal in terms of sorting and their relative order is maintained.

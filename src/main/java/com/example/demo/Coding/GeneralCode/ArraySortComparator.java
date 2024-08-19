@@ -51,6 +51,9 @@ public class ArraySortComparator {
         }
     }
     public static void main(String[] args) {
-        sort2DArray();
+        //sort2DArray();
+        String str1 = "ababab";
+        String str2 = "abab";
+        System.out.println(str1.substring(str2.length()));
     }
 }
